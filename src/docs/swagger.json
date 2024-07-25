@@ -5,7 +5,7 @@
     "description": "API documentation for Quick Help",
     "version": "1.0.0"
   },
-  "host": "quickhelp-2.onrender.com",
+  "host": "qh-backend.onrender.com",
   "basePath": "/api/v1",
   "schemes": ["https", "http"],
   "paths": {

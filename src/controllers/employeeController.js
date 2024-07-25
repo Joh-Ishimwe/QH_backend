@@ -11,8 +11,12 @@ const employeeController = {
   addEmployee: asyncWrapper(async (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
+      console.log("Validation Errors: ", errors.array());
       return next(new BadRequestError(errors.array()[0].msg));
     }
+
+    console.log("Request Body: ", req.body); // Add this line to log the request body
+
     let profilePicture = {};
     try {
       if (req.file) {
@@ -27,6 +31,7 @@ const employeeController = {
       console.error("Cloudinary upload error:", error);
       return next(new Error("Failed to upload profile picture to Cloudinary"));
     }
+
     const {
       firstName,
       lastName,
