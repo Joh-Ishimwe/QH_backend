@@ -13,6 +13,18 @@ const employeeroute = require('./Routes/employeeRoute.js');
 const jobRoutes = require('../src/Routes/jobRoutes.js');
 const bookingRoutes = require('../src/Routes/bookingRoutes.js');
 
+
+
+const corsOptions = {
+    origin: [
+      "https://quickhelp-d3dy.onrender.com/",
+      "http://localhost:5173/ Locally",
+    ],
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    allowedHeaders: "Content-Type, Authorization",
+    credentials: true,
+  };
+
 //middlewares
 app.use(express.json());
 app.use(cors());
